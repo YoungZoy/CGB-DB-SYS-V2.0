@@ -1,0 +1,48 @@
+#server
+server:
+  port: 80
+  tomcat:
+    max-threads: 1000
+  servlet:
+    context-path: /
+    
+
+#Spring MVC
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///tbsys?serverTimezone=GMT%2B8
+    username: root
+    password: root
+  thymeleaf:
+    prefix: classpath:/templates/pages/
+    suffix: .html
+    
+#AOP
+  aop:
+    proxy-target-class: true
+    
+#mybatis
+mybatis:
+  configuration:
+    default-statement-timeout: 30
+    map-underscore-to-camel-case: true
+  mapper-locations:
+  - classpath:/mappers/sys/*.xml
+
+#pageHelper
+pagehelper:
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql    
+  
+    
+#log
+logging:
+  level:
+    com.tedu.cgb.team: TRACE
+  
+    
+    
+    
+    
